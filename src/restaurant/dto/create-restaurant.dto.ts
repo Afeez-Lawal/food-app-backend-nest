@@ -1,1 +1,4 @@
-export class CreateRestaurantDto {}
+export class CreateRestaurantDto {
+  name: string;
+  address: string;
+}

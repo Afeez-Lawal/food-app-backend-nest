@@ -3,8 +3,10 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
-import { RestaurantModule } from './restaurant/restaurant.module';
 import { FoodModule } from './food/food.module';
+import { RestaurantModule } from './restaurant/restaurant.module';
+import { UploadController } from './upload/upload.controller';
+import { UploadService } from './upload/upload.service';
 
 @Module({
   imports: [
@@ -19,7 +21,7 @@ import { FoodModule } from './food/food.module';
     RestaurantModule,
     FoodModule,
   ],
-  controllers: [AppController],
-  providers: [AppService, ConfigService],
+  controllers: [AppController, UploadController],
+  providers: [AppService, ConfigService, UploadService],
 })
 export class AppModule {}

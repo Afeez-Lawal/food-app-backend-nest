@@ -27,6 +27,7 @@
     "@nestjs/mongoose": "^9.2.2",
     "@nestjs/platform-express": "^9.0.0",
     "aws-sdk": "^2.1382.0",
+    "google-auth-library": "^8.9.0",
     "mongoose": "^7.2.0",
     "reflect-metadata": "^0.1.13",
     "rxjs": "^7.2.0"

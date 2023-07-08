@@ -25,8 +25,6 @@ export class AuthService {
       audience: this.configService.get<string>('GOOGLE_CLIENT_ID'),
     });
 
-    console.log(ticket.getPayload());
-
     const googlePayload = ticket.getPayload();
 
     if (!googlePayload) throw new UnauthorizedException('Invalid credentials');

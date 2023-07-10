@@ -46,28 +46,15 @@ export class AuthService {
       user = await this.userService.create(data);
     }
 
-    const jwtPayload = { name: user.name, email: user.email, sub: user._id };
+    const jwtPayload = {
+      name: user.name,
+      email: user.email,
+      sub: user._id,
+      image: user.image,
+    };
 
     return {
-      access_token: this.jwtService.sign(jwtPayload),
+      token: this.jwtService.sign(jwtPayload),
     };
   }
 }
-
-const payload = {
-  iss: 'https://accounts.google.com',
-  nbf: 1686781240,
-  aud: '471773066883-70g6pqbsch6ga72f7r79ip3u5clk8ika.apps.googleusercontent.com',
-  sub: '105671206041417974777',
-  email: 'lafrizfz@gmail.com',
-  email_verified: true,
-  azp: '471773066883-70g6pqbsch6ga72f7r79ip3u5clk8ika.apps.googleusercontent.com',
-  name: 'Afeez Lawal',
-  picture:
-    'https://lh3.googleusercontent.com/a/AAcHTtdZQiO-aZfj_W2ku-HKxiUudIneDMF_7go6OcxeHg=s96-c',
-  given_name: 'Afeez',
-  family_name: 'Lawal',
-  iat: 1686781540,
-  exp: 1686785140,
-  jti: '80597410b2186563d7f43f08030a01f069d63276',
-};
